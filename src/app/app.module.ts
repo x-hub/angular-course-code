@@ -10,11 +10,14 @@ import { BgGreenDirective } from './bg-green.directive';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { RegisterComponent } from './register/register.component';
 import { ComputerComponent } from './computer/computer.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Route[] = [
   { path: '', component: HomeComponentComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'users', component: UsersListComponent },
   { path: 'computer/:id', component: ComputerComponent },
 ];
 
@@ -26,11 +29,13 @@ const routes: Route[] = [
     BgGreenDirective,
     HomeComponentComponent,
     RegisterComponent,
-    ComputerComponent
+    ComputerComponent,
+    UsersListComponent
   ],
   imports: [
       BrowserModule,
       ReactiveFormsModule,
+      HttpClientModule,
       RouterModule.forRoot(routes)
   ],
   providers: [],

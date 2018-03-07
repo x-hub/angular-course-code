@@ -1,0 +1,23 @@
+<form [formGroup]="search">
+  <input type="text" formControlName="input">
+</form>
+
+<h2>Filtered Users</h2>
+<div *ngFor="let user of filteredUsers">
+  <div class="user-img">
+    <img [src]="user.picture">
+  </div>
+  <div class="user-name">
+    {{ user.name }}
+  </div>
+</div>
+
+<h2>Users</h2>
+<div *ngFor="let user of users">
+  <div class="user-img">
+    <img [src]="user.picture">
+  </div>
+  <div class="user-name">
+    {{ user.name }}
+  </div>
+</div>

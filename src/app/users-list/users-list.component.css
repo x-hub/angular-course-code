@@ -1,0 +1,8 @@
+.user-img img{
+    max-width: 50px;
+}
+
+.user-name {
+    font-style: italic;
+    font-weight: bold;
+}

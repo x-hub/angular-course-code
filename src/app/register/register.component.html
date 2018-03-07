@@ -1,12 +1,21 @@
 <h3>Please Register</h3>
 <hr>
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" (ngSubmit)="submitForm($event)">
   <div>
     <label for="email">Email</label>
     <input id="email" formControlName="email" type="text">
+    <div style="background-color: red"  *ngIf="registerForm.get('email').touched && !registerForm.get('email').valid">
+      Email Invalid!!
+    </div>
   </div>
   <div>
     <label for="password">Password</label>
     <input id="password" formControlName="password" type="password">
+    <div style="background-color: red"  *ngIf="registerForm.get('password').touched && !registerForm.get('password').valid">
+      Password Invalid!!
+    </div>
+  </div>
+  <div>
+    <button>Submit</button>
   </div>
 </form>
